@@ -23,4 +23,16 @@ El diagrama de la tabla "Usuarios" sería el siguiente:
 +----+---------+----------+----------------------+---------------+
 ```
 
-Recuerda que este es solo un ejemplo básico y puedes ajustar los nombres de las columnas y sus tipos de datos según tus necesidades. Además, puedes agregar más columnas si es necesario para almacenar información adicional de los usuarios.
+
+
+
+### Crear el proyecto de Laravel  en Xampp/htdocs/ 
+
+```composer create-project laravel/laravel example-app```
+
+
+Una vez creado el proyecto, inicie el servidor de desarrollo local de Laravel utilizando el comando Artisan CLI de Laravel:serve
+
+```cd example-app
+ 
+php artisan serve```

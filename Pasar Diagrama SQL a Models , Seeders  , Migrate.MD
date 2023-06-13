@@ -111,3 +111,49 @@ public function up()
 8. Ejecuta el comando `php artisan migrate` en la terminal para ejecutar la migración y crear la tabla "Usuarios" en la base de datos.
 
 Con estos pasos, has creado el modelo, el seeder y la migración para la tabla "Usuarios" en tu proyecto Laravel. Ahora puedes usar el modelo para interactuar con la tabla y ejecutar el seeder para poblar la tabla con datos de prueba.
+
+
+
+
+
+### Para configurar la conexión a la base de datos MySQL en Laravel, sigue estos pasos:
+
+1. Abre el archivo `.env` en la raíz de tu proyecto Laravel.
+
+2. Busca las siguientes líneas en el archivo `.env`:
+
+```
+DB_CONNECTION=
+DB_HOST=
+DB_PORT=
+DB_DATABASE=
+DB_USERNAME=
+DB_PASSWORD=
+```
+
+3. Completa la información de conexión de tu base de datos MySQL en las variables correspondientes:
+
+- `DB_CONNECTION` establece el tipo de conexión y debe ser `mysql`.
+- `DB_HOST` define la dirección del host de la base de datos. Por lo general, es `127.0.0.1` o `localhost`.
+- `DB_PORT` especifica el puerto de la base de datos MySQL. Por defecto, es `3306`.
+- `DB_DATABASE` es el nombre de la base de datos a la que deseas conectar.
+- `DB_USERNAME` es el nombre de usuario de la base de datos.
+- `DB_PASSWORD` es la contraseña del usuario de la base de datos.
+
+Asegúrate de proporcionar los valores correctos para tu configuración de base de datos.
+
+4. Guarda los cambios en el archivo `.env`.
+
+5. Opcionalmente, si estás utilizando un archivo `.env.example`, puedes ejecutar el siguiente comando para copiarlo y crear un nuevo archivo `.env`:
+```
+cp .env.example .env
+```
+
+6. Ejecuta el siguiente comando en la terminal para generar una nueva clave de aplicación:
+```
+php artisan key:generate
+```
+
+Esto generará una nueva clave de aplicación en el archivo `.env` para garantizar la seguridad de tu proyecto Laravel.
+
+Una vez que hayas completado estos pasos, Laravel utilizará la configuración de conexión a la base de datos MySQL que has especificado en el archivo `.env`. Ahora puedes realizar operaciones de base de datos en tu proyecto Laravel utilizando la conexión a MySQL.

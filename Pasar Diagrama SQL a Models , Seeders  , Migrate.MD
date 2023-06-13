@@ -157,3 +157,51 @@ php artisan key:generate
 Esto generará una nueva clave de aplicación en el archivo `.env` para garantizar la seguridad de tu proyecto Laravel.
 
 Una vez que hayas completado estos pasos, Laravel utilizará la configuración de conexión a la base de datos MySQL que has especificado en el archivo `.env`. Ahora puedes realizar operaciones de base de datos en tu proyecto Laravel utilizando la conexión a MySQL.
+
+
+
+
+
+### Para realizar un test de conexión a la base de datos en Laravel, puedes seguir los siguientes pasos:
+
+1. Crea un nuevo archivo de prueba en la carpeta `tests` de tu proyecto Laravel. Puedes llamarlo, por ejemplo, `DatabaseConnectionTest.php`.
+
+2. Abre el archivo `DatabaseConnectionTest.php` y agrega el siguiente código:
+
+```php
+<?php
+
+namespace Tests\Feature;
+
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\DB;
+use Tests\TestCase;
+
+class DatabaseConnectionTest extends TestCase
+{
+    /**
+     * A basic test example.
+     *
+     * @return void
+     */
+    public function testDatabaseConnection()
+    {
+        $response = DB::connection()->getPdo();
+
+        $this->assertNotNull($response);
+    }
+}
+```
+
+3. Guarda el archivo `DatabaseConnectionTest.php`.
+
+4. Abre la terminal y ejecuta el siguiente comando para ejecutar el test de conexión a la base de datos:
+```
+php artisan test --filter DatabaseConnectionTest
+```
+
+Esto ejecutará el test `DatabaseConnectionTest` y verificará si se puede establecer una conexión exitosa a la base de datos.
+
+Si la conexión a la base de datos es exitosa, el test pasará y mostrará un resultado exitoso. Si hay algún error de conexión, el test fallará y mostrará un mensaje de error.
+
+Este test te permitirá verificar rápidamente si la conexión a la base de datos está configurada correctamente en tu proyecto Laravel.
